@@ -1,0 +1,15 @@
+﻿
+@{
+    Layout = null;
+}
+@using ozgunneonCom.Models
+@model IEnumerable<PhotoType>
+
+    <ul class="dropdown-menu">
+        @foreach (var item in Model)
+        {
+            <li><a href="/Urun/Index/@item.Id">@item.Name</a></li>
+
+        }
+    </ul>
+

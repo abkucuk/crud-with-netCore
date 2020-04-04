@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+@model IEnumerable<ozgunneonCom.Models.Photo>
+            <div class="blog row">
+                <div class="col-sm-8">
+                    <div class="blog-content classic-view">
+                        <div class="blog-posts">
+                            <div class="post">
+                                <div class="post-content">
+                                    <h2 class="post-title text-center"><a href="blog-post.html">Ligula Tristique Malesuada Venenatis Fermentum</a></h2>
+                                    <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient. Curabitur blandit tempus lacinia odio. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl et. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies.</p>
+                                    <p>Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus... </p>
+                                   
+                                    <div class="collage-wrapper bm20">
+                                        <div id="collage-medium" class="collage effect-parent light-gallery">
+
+                                            @foreach (var item in Model)
+                                            {
+                                                <div class="collage-image-wrapper">
+                                                    <div class="overlay">
+                                                        <a href="~/uploads/@item.photoName" class="lgitem" data-sub-html="#@item.ID">
+                                                            <img src="~/uploads/@item.photoName" style="width:300px; height:300px;" alt="" />
+                                                            <div id="@item.ID" class="hidden">
+                                                                <h3>@item.description</h3>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+
+                                            @*<div class="collage-image-wrapper">
+            <div class="overlay">
+                <a href="~/style/images/art/bc2-full.jpg" class="lgitem" data-sub-html="#caption2">
+                    <img src="~/style/images/art/bc2.jpg" style="width:450px; height:300px;" alt="" />
+                    <div id="caption2" class="hidden">
+                        <h3>Amet Sit Ridiculus</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="collage-image-wrapper">
+            <div class="overlay">
+                <a href="~/style/images/art/bc3-full.jpg" class="lgitem" data-sub-html="#caption3">
+                    <img src="~/style/images/art/bc3.jpg" style="width:380px; height:300px;" alt="" />
+                    <div id="caption3" class="hidden">
+                        <h3>Vulputate Quam Tellus</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="collage-image-wrapper">
+            <div class="overlay">
+                <a href="~/style/images/art/bc4-full.jpg" class="lgitem" data-sub-html="#caption4">
+                    <img src="~/style/images/art/bc4.jpg" style="width:199px; height:300px;" alt="" />
+                    <div id="caption4" class="hidden">
+                        <h3>Pellentesque Ullamcorper Fusce</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="collage-image-wrapper">
+            <div class="overlay">
+                <a href="~/style/images/art/bc5-full.jpg" class="lgitem" data-sub-html="#caption5">
+                    <img src="~/style/images/art/bc5.jpg" style="width:286px; height:300px;" alt="" />
+                    <div id="caption5" class="hidden">
+                        <h3>Parturient Elit Mattis</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="collage-image-wrapper">
+            <div class="overlay">
+                <a href="~/style/images/art/bc6-full.jpg" class="lgitem" data-sub-html="#caption6">
+                    <img src="~/style/images/art/bc6.jpg" style="width:450px; height:300px;" alt="" />
+
+                </a>
+            </div>
+        </div>*@
+                                        </div>
+                                    </div>
+                                    <div class="text-center"><a href="blog-post.html" class="more">Read More</a></div>
+                                </div>
+                                <!-- /.post-content -->
+
+                            </div>
+                            <!-- /.post -->
+                            <hr />
+
+                            <!-- /.grid-view -->
+                            <!-- /.pagination -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.blog-content -->
+
+                <aside class="col-sm-4 sidebar">
+                    <div class="sidebox widget">
+                        <h3 class="widget-title">About Us</h3>
+                        <figure> <img src="style/images/art/about.jpg" class="img-auto" alt="" /> </figure>
+                        <div class="divide10"></div>
+                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum.</p>
+                        <ul class="social">
+                            <li> <a href="#"><i class="ion-social-rss"></i></a> </li>
+                            <li> <a href="#"><i class="ion-social-facebook"></i></a> </li>
+                            <li> <a href="#"><i class="ion-social-twitter"></i></a> </li>
+                            <li> <a href="#"><i class="ion-social-instagram"></i></a> </li>
+                            <li> <a href="#"><i class="ion-social-vimeo"></i></a> </li>
+                            <li> <a href="#"><i class="ion-social-whatsapp"></i></a> </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- /.widget -->
+
+                    <div class="sidebox widget">
+                        <h3 class="widget-title">Popular Posts</h3>
+                        <ul class="post-list">
+                            <li>
+                                <figure class="overlay small"> <a href="blog-post.html"><img src="style/images/art/a1.jpg" alt="" /> </a> </figure>
+                                <div class="post-content">
+                                    <h4 class="post-title"> <a href="blog-post.html">Magna Mollis Ultricies Mauris</a> </h4>
+                                    <div class="meta"><span class="date">12 Nov 2014</span><span class="category"><a href="#">Urban</a></span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <figure class="overlay small"> <a href="blog-post.html"><img src="style/images/art/a2.jpg" alt="" /> </a> </figure>
+                                <div class="post-content">
+                                    <h4 class="post-title"> <a href="blog-post.html">Ornare Nullam Risus Cursus</a> </h4>
+                                    <div class="meta"><span class="date">12 Nov 2014</span><span class="category"><a href="#">Still Life</a></span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <figure class="overlay small"> <a href="blog-post.html"><img src="style/images/art/a3.jpg" alt="" /> </a> </figure>
+                                <div class="post-content">
+                                    <h4 class="post-title"> <a href="blog-post.html">Euismod Nullam Fusce Dapibus</a> </h4>
+                                    <div class="meta"><span class="date">12 Nov 2014</span><span class="category"><a href="#">Conceptual</a></span></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- /.post-list -->
+                    </div>
+                    <!-- /.widget -->
+
+                    <div class="sidebox widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="list circled">
+                            <li><a href="#">Lifestyle (21)</a></li>
+                            <li><a href="#">Photography (19)</a></li>
+                            <li><a href="#">Journal (16)</a></li>
+                            <li><a href="#">Works (7)</a></li>
+                            <li><a href="#">Conceptual (12)</a></li>
+                            <li><a href="#">Videography</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.widget -->
+
+                    <div class="sidebox widget">
+                        <h3 class="widget-title">Tags</h3>
+                        <ul class="tag-list">
+                            <li><a href="#" class="btn btn-white">Still Life</a></li>
+                            <li><a href="#" class="btn btn-white">Urban</a></li>
+                            <li><a href="#" class="btn btn-white">Journal</a></li>
+                            <li><a href="#" class="btn btn-white">icMekan</a></li>
+                            <li><a href="#" class="btn btn-white">Landscape</a></li>
+                            <li><a href="#" class="btn btn-white">Macro</a></li>
+                            <li><a href="#" class="btn btn-white">Workshop</a></li>
+                            <li><a href="#" class="btn btn-white">Photography</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.widget -->
+                    <div class="sidebox widget">
+                        <h3 class="widget-title">Instagram</h3>
+                        <div class="tiles instagram">
+                            <div id="instafeed-widget" class="items row row-offset-0"></div>
+                        </div>
+                        <!--/.tiles -->
+                    </div>
+                    <!-- /.widget -->
+                    <!-- /.widget -->
+                </aside>
+                <!-- /column .sidebar -->
+
+            </div>
+            <!-- /.blog -->

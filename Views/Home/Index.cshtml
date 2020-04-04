@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+@model ozgunneonCom.Models.PhotoAndTypeViewModel
+<div class="hero text-center">
+    <p>
+        Sizlerin özel siparişlerine en uygun çözümler sunmaya <br class="hidden-xs hidden-sm" />
+        Özgün Neon olarak her zaman hazırız.
+    </p>
+</div>
+<!-- /.hero -->
+
+<div id="js-lightbox-filter" class="cbp-filter-container text-center">
+    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"><span>Tümü</span></div>
+
+    @foreach (var item in Model.types)
+    {
+        <div data-filter=".@item.Name" class="cbp-filter-item"><span>@item.Name</span></div>
+    }
+    @*<div data-filter="*" class="cbp-filter-item-active cbp-filter-item"><span>Tümü</span></div>
+    <div data-filter=".icMekan" class="cbp-filter-item"><span>İç Mekan</span></div>
+    <div data-filter=".conceptual" class="cbp-filter-item"><span>Tek Sıra</span></div>
+    <div data-filter=".neonArt" class="cbp-filter-item"><span>Neon Art</span></div>*@
+</div>
+<div class="clearfix"></div>
+<div class="divide25"></div>
+<div id="js-grid-lightbox" class="cbp cbp-l-grid-inline light-gallery">
+    @foreach (var item in Model.photos)
+    {
+        <div class="cbp-item @Model.types.FirstOrDefault(k => k.Id == item.photoTypeId).Name">
+            <a href="uploads/@item.photoName" class="cbp-caption lgitem" data-sub-html="#@item.ID">
+                <div class="cbp-caption-defaultWrap"> <img src="uploads/@item.photoName" alt=""> </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">@item.description</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="@item.ID" class="hidden">
+                    <h3>@item.description</h3>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+<div class="divide30"></div>
+<div id="js-lightbox-more" class="text-center"> <a href="ajax/loadmore.html" class="cbp-l-loadMore-link btn" rel="nofollow"> <span class="cbp-l-loadMore-defaultText">Daha Fazla Resim yükle</span> <span class="cbp-l-loadMore-loadingText">LOADING...</span> <span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span> </a> </div>
+
+

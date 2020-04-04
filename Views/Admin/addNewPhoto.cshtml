@@ -1,0 +1,55 @@
+﻿@model ozgunneonCom.Models.PhotoAndTypeViewModel
+
+@{
+    ViewData["Title"] = "addNewPhoto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Resim Ekle</h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="addNewPhoto" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                  
+                    <div class="form-group">
+                        <label asp-for="Photo.photoTypeId">Tabela Türü:</label>
+                        
+                        <select  asp-for="Photo.photoTypeId" class="form-control custom-select">
+                            @foreach (var item in Model.types)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo.photoName" class="control-label"></label>
+                        <input name="myFile" type="file" class="form-control" id="example-fileinput">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo.description" class="control-label"></label>
+                        <input asp-for="Photo.description" class="form-control" />
+                        <span asp-validation-for="Photo.description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

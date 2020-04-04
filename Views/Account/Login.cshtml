@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+@model ozgunneonCom.Models.LoginModel
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from shreyu.coderthemes.com/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Feb 2020 13:41:33 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Özgün Neon Yönetim Paneli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="authentication-bg">
+
+    <div class="account-pages my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-md-6 p-5">
+                                    <div class="mx-auto mb-5">
+                                        <a href="index.html">
+                                            <img src="~/assets/images/logo.png" alt="" height="24" />
+                                            <h3 class="d-inline align-middle ml-1 text-logo">Özgün Neon</h3>
+                                        </a>
+                                    </div>
+
+                                    <h6 class="h5 mb-0 mt-4">Hoşgeldin!</h6>
+                                    <p class="text-muted mt-1 mb-4">Kullanıcı adı ve şifren ile yönetim paneline giriş yapabilirsin.</p>
+
+                                    <form asp-action="Login" method="post" class="authentication-form">
+                                        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+                                        <div class="form-group">
+                                            <label class="form-control-label">Email Address</label>
+                                            <div class="input-group input-group-merge">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="icon-dual" data-feather="mail"></i>
+                                                    </span>
+                                                </div>
+                                                <input type="email" name="Email" class="form-control" id="email" placeholder="Enter your email">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-4">
+                                            <label class="form-control-label">Şifre</label>
+                                            <div class="input-group input-group-merge">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="icon-dual" data-feather="lock"></i>
+                                                    </span>
+                                                </div>
+                                                <input type="password" name="Password" class="form-control" id="password"
+                                                       placeholder="Enter your password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            
+                                        </div>
+
+                                        <div class="form-group mb-0 text-center">
+                                            <button class="btn btn-primary btn-block" type="submit">
+                                                Giriş Yap
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 d-none d-md-inline-block">
+                                    <div class="auth-page-sidebar">
+                                        <div class="overlay"></div>
+                                        <div class="auth-user-testimonial">
+                                            <p class="font-size-24 font-weight-bold text-white mb-1">I simply love it!</p>
+                                            <p class="lead">"It's a elegent templete. I love it very much!"</p>
+                                            <p>- Admin User</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+                    <!-- end row -->
+
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+
+<!-- Mirrored from shreyu.coderthemes.com/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Feb 2020 13:41:33 GMT -->
+</html>

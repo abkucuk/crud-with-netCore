@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ozgunneonCom.Models.PhotoAndTypeViewModel
+
+<div class="table-responsive">
+    <table class="table table-striped mb-0">
+        <thead>
+            <tr>
+                <th scope="col">Resim</th>
+                <th scope="col">Resim Adı</th>
+                <th scope="col">Türü</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.photos)
+            {
+                <tr>
+                    <td><img class="img-fluid" style="height:100px; width:100px" src="~/uploads/@item.photoName" /></td>
+                    <td>@item.photoName</td>
+                    <td>@Model.types.FirstOrDefault(k => k.Id == item.photoTypeId).Name</td>
+                    <td>
+                        <a class="btn-danger" asp-action="DeletePhoto" asp-controller="Admin" asp-route-id="@item.ID">
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
